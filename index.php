@@ -6,7 +6,7 @@
     $data = file_get_contents('php://input'); // весь ввод перенаправляем в $data
     $data = json_decode($data, true); // декодируем json-закодированные-текстовые данные в PHP-массив
     file_put_contents('file.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
-    https://api.telegram.org/bot6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U/setwebhook?url=https://dashing-puppy-182f71.netlify.app/index.php
+    https://api.telegram.org/bot6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U/setwebhook?url=https://polyester-woolen-buffalo.glitch.me/index.php
 
     $data = $data['callback_query'] ? $data['callback_query'] : $data['message'];
     define('TOKEN', '6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U');
