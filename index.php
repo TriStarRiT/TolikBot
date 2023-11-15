@@ -50,6 +50,7 @@
         curl_setopt_array($ch, $ch_post);
         curl_exec($ch);
     }
+echo'чё';
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +61,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    чё
 </body>
 </html>
