@@ -1,14 +1,12 @@
 <?php
     header('Content-Type: text/html; charset=utf-8');
 
-    $site_dir = dirname(dirname(__FILE__)).'/'; // корень сайта
     $bot_token = '6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U'; // токен вашего бота
-    $data = file_get_contents('php://input'); // весь ввод перенаправляем в $data
-    $data = json_decode($data, true); // декодируем json-закодированные-текстовые данные в PHP-массив
+    $data = json_decode(file_get_contents('php://input'), true); // декодируем json-закодированные-текстовые данные в PHP-массив
     file_put_contents('file.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
-    https://api.telegram.org/bot6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U/setwebhook?url=https://polyester-woolen-buffalo.glitch.me/index.php
+    https://api.telegram.org/bot6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U/setwebhook?url=http://tristarrit.42web.io/
 
-    $data = $data['callback_query'] ? $data['callback_query'] : $data['message'];
+    /*$data = $data['callback_query'] ? $data['callback_query'] : $data['message'];
     define('TOKEN', '6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U');
     $message = mb_strtolower(($data['text'] ? $data['text']: $data['data']), 'utf-8');
 
@@ -37,5 +35,5 @@
         $result = curl_exec($curl);
         curl_close($curl);
         return (json_decode($result, true)) ? json_decode($result, true) : $result;
-    }
+    }*/
 ?>
