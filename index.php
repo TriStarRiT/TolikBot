@@ -1,39 +1,52 @@
 <?php
-    header('Content-Type: text/html; charset=utf-8');
+//65fc0986
+if (!isset($_REQUEST)) {
+    return "65fc0986";
+}
+$confirmationToken = '65fc0986';
 
-    $bot_token = '6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U'; // токен вашего бота
-    $data = json_decode(file_get_contents('php://input'), true); // декодируем json-закодированные-текстовые данные в PHP-массив
-    file_put_contents('file.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
-    https://api.telegram.org/bot6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U/setwebhook?url=http://tristarrit.42web.io/
+$token = 'vk1.a.0gxV9bsjsuQ11oW-ogbt_cAV7lhWsEieVFdzO1CTwMb8EdFCJCbaOM752YjkKq2rQy8ngwiEMvbBRQjyba1x8ioFioXzpieRLQeRnkGDpoJg5nT3mifjRyAAUMcfuNOX-uaO1AaolX4zKRCzpa-pD2--4Orf68PwMkdY1ND9qf7h6igNTqLJwOpKes_aetYYlmzRcqdpN61XHaCQSGkRJw';
+$data = json_decode(file_get_contents('php://input'));
+$secretKey = "MaaYAol";
+echo 'data:'.$data;
 
-    /*$data = $data['callback_query'] ? $data['callback_query'] : $data['message'];
-    define('TOKEN', '6672266037:AAFqUUN8fl4A1hBxr0vmgLkOUt_gjEAkQ1U');
-    $message = mb_strtolower(($data['text'] ? $data['text']: $data['data']), 'utf-8');
+if(strcmp($data->secret, $secretKey) !== 0 && strcmp($data->type, 'confirmation') !== 0){
+    return;
+}
 
-    switch ($message)
-    {
-        case '/help':
-            $method = 'sendMessage';
-            $send_data = [
-                'text' => 'Я пока ничего не могу :)'
-            ];
-            break;
+    switch ($data->type) {
+    //Если это уведомление для подтверждения адреса сервера...
+    case 'confirmation':
+        //...отправляем строку для подтверждения адреса
+        echo $confirmationToken;
+        break;
+
+    //Если это уведомление о новом сообщении...
+    case 'message_new':
+        //...получаем id его автора
+        $userId = $data->object->user_id;
+        //затем с помощью users.get получаем данные об авторе
+        $userInfo = json_decode(file_get_contents("https://api.vk.com/method/users.get?user_ids={$userId}&v=5.0"));
+
+        //и извлекаем из ответа его имя
+        $user_name = $userInfo->response[0]->first_name;
+
+        //С помощью messages.send и токена сообщества отправляем ответное сообщение
+        $request_params = array(
+            'message' => "{$user_name}, ваше сообщение зарегистрировано!<br>".
+                            "Мы постараемся ответить в ближайшее время.",
+            'user_id' => $userId,
+            'access_token' => $token,
+            'v' => '5.0'
+        );
+
+        $get_params = http_build_query($request_params);
+
+        file_get_contents('https://api.vk.com/method/messages.send?' . $get_params);
+
+        //Возвращаем "ok" серверу Callback API
+        echo('ok');
+
+        break;
     }
-
-    $send_data['$chat_id'] = $data['chat']['id'];
-    $res = sendTelegram($method, $send_data);
-    function sendTelegram($method, $data, $headers = []){
-        $curl = curl_init();
-        curl_setopt_array($curl, [
-            CURLOPT_POST => 1,
-            CURLOPT_HEADER => 0,
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => 'https://api.telegram.org/bot'. TOKEN . '/'. $method,
-            CURLOPT_POSTFIELDS => json_encode($data),
-            CURLOPT_HTTPHEADER => array_merge(array('Content-Type: application/json'), $headers),
-        ] );
-        $result = curl_exec($curl);
-        curl_close($curl);
-        return (json_decode($result, true)) ? json_decode($result, true) : $result;
-    }*/
 ?>
