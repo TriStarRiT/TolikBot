@@ -1,7 +1,7 @@
 <?php
 //65fc0986
 if (!isset($_REQUEST)) {
-    return "65fc0986";
+    return;
 }
 $confirmationToken = '65fc0986';
 
