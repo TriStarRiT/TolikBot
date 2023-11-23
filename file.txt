@@ -1,0 +1,675 @@
+$data: 
+$data: 
+$data: 
+$data: Array
+(
+    [update_id] => 837803293
+    [message] => Array
+        (
+            [message_id] => 81
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700660367
+            [text] => test
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803294
+    [message] => Array
+        (
+            [message_id] => 82
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700660499
+            [text] => /help
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 5
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: 
+$data: 
+$data: Array
+(
+    [update_id] => 837803295
+    [message] => Array
+        (
+            [message_id] => 83
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700660538
+            [text] => /help
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 5
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: Array
+(
+    [update_id] => 837803296
+    [message] => Array
+        (
+            [message_id] => 84
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700660993
+            [text] => /help
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 5
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803297
+    [message] => Array
+        (
+            [message_id] => 86
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700661001
+            [text] => /about
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803298
+    [message] => Array
+        (
+            [message_id] => 88
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700661005
+            [text] => ку
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803299
+    [message] => Array
+        (
+            [message_id] => 89
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700661074
+            [text] => /about
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803300
+    [message] => Array
+        (
+            [message_id] => 91
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700661099
+            [text] => /about
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803301
+    [message] => Array
+        (
+            [message_id] => 93
+            [from] => Array
+                (
+                    [id] => 5153096730
+                    [is_bot] => 
+                    [first_name] => Сергей
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 5153096730
+                    [first_name] => Сергей
+                    [type] => private
+                )
+
+            [date] => 1700661185
+            [text] => /help
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 5
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803302
+    [message] => Array
+        (
+            [message_id] => 95
+            [from] => Array
+                (
+                    [id] => 5153096730
+                    [is_bot] => 
+                    [first_name] => Сергей
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 5153096730
+                    [first_name] => Сергей
+                    [type] => private
+                )
+
+            [date] => 1700661363
+            [text] => /about
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803303
+    [message] => Array
+        (
+            [message_id] => 97
+            [from] => Array
+                (
+                    [id] => 5153096730
+                    [is_bot] => 
+                    [first_name] => Сергей
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 5153096730
+                    [first_name] => Сергей
+                    [type] => private
+                )
+
+            [date] => 1700661372
+            [text] => Лол
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803304
+    [message] => Array
+        (
+            [message_id] => 98
+            [from] => Array
+                (
+                    [id] => 5153096730
+                    [is_bot] => 
+                    [first_name] => Сергей
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 5153096730
+                    [first_name] => Сергей
+                    [type] => private
+                )
+
+            [date] => 1700661389
+            [text] => Нормально
+        )
+
+)
+
+$data: 
+$data: Array
+(
+    [update_id] => 837803305
+    [message] => Array
+        (
+            [message_id] => 99
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700662292
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803306
+    [message] => Array
+        (
+            [message_id] => 100
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700662354
+            [text] => /start
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803307
+    [message] => Array
+        (
+            [message_id] => 102
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700662372
+            [text] => /about
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 6
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: Array
+(
+    [update_id] => 837803308
+    [message] => Array
+        (
+            [message_id] => 104
+            [from] => Array
+                (
+                    [id] => 672876650
+                    [is_bot] => 
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [language_code] => ru
+                )
+
+            [chat] => Array
+                (
+                    [id] => 672876650
+                    [first_name] => Unknown_Person
+                    [username] => Unknown_RiT
+                    [type] => private
+                )
+
+            [date] => 1700662377
+            [text] => /help
+            [entities] => Array
+                (
+                    [0] => Array
+                        (
+                            [offset] => 0
+                            [length] => 5
+                            [type] => bot_command
+                        )
+
+                )
+
+        )
+
+)
+
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
+$data: 
