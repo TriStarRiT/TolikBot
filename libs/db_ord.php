@@ -11,6 +11,13 @@ function checkOrdInBase($id){
         return true;
     }else{return false;}
 }
+function checkOrdReady($id){
+    $ord = findUserActiveOrd($id);
+    $data = R::getAll('SELECT * FROM ord WHERE id ='.$ord.';');
+    if (empty($data[0]['time']) || empty($data[0]['term']) || ($data[0]['price']==0)){
+        return true;
+    }else{return false;}
+}
 function findUserActiveOrd($id){
     return R::getAll('SELECT id FROM ord WHERE user = '.$id.' AND status = "Не готов";')[0]['id'];
 }

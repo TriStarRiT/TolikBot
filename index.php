@@ -28,21 +28,19 @@
         $message_id = $data['message']['message_id'];
         $message_id++;
         $text_array = explode(" ", $text);
-        if (findLastMessage($chat_id)=='dm'){
-           switch($text){
-            case('/start'):
-                if(checkUserInBase($chat_id)){
+        if($text == '/start'){
+           if(checkUserInBase($chat_id)){
                     setUser($chat_id, $user_name, $first_name);
                 }
                 if(checkOrdInBase($chat_id)){
                     setOrd($chat_id);
                 }
                 $text_return = "Здравствуй, $first_name!\n
-                Я - Толик, бот, который поможет вам с домашней работой по моделированию зубов!
-                Все мои основные функции присутствуют на клавиатуре рядом со строкой ввода
+                Я - бот, который поможет вам с домашней работой по моделированию зубов🦷!
+                Все мои основные функции присутствуют на кнопках рядом со строкой ввода
                 ";
                 $keyboard1 = getKeyBoard([[
-                    ['text'=>"Услуги"],
+                    ['text'=>"Товары и услуги"],
                     ['text'=>'Помощь'],
                     ['text'=>'О нас']
                     ],
@@ -51,8 +49,10 @@
                     [['text'=>'Корзина']]
                     ]);
                 $reply_markup = $keyboard1;
-                message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
-                break;
+                message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup); 
+        }
+        if (findLastMessage($chat_id)=='dm'){
+           switch($text){
             case ('Корзина'):
                 if (empty(findLastMessageId($chat_id))){
                     setLastMessageId($chat_id, $message_id);
@@ -64,25 +64,24 @@
                 break;
             case('Помощь'):
                 $text_return = "Вот команды, что я понимаю: 
-                Услуги - список оказываемых услуг
+                Товары и услуги - список товаров и услуг
                 Помощь - список команд
                 О нас - основная информация о нас
                 Контакты - контакты с продавцом
                 Примеры работ - фото примеров работ
                 ";
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
-                break;
             case ('Отсосёшь'):
                 $text_return="Иди нахуй";
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
-            case('Услуги'):
-                $text_return = "Вот список оказываемых услуг:";
+            case('Товары и услуги'):
+                $text_return = "Вот список товаров и услуг:";
                 $keyboard = getInlineKeyBoard([
-                    [['text' => 'Зубы, бережно слепленные, из пластилина ', 'callback_data' => '1p_z']],
-                    [['text' => 'Зубы, аккуратно вырезанные из мыла', 'callback_data' => 'm_z']],
-                    [['text' => 'Альбом с контурами зубов', 'callback_data' => 'a']],
-                    [['text' => 'Индивидуальные занятия по моделированию зубов', 'callback_data' => 'z']],
+                    [['text' => '🦷Зубы из пластилина', 'callback_data' => '1p_z']],
+                    [['text' => '🦷Зубы из мыла', 'callback_data' => 'm_z']],
+                    [['text' => '📒Альбом с контурами зубов', 'callback_data' => 'a']],
+                    [['text' => '🧑‍🏫Индивидуальные занятия по моделированию зубов', 'callback_data' => 'z']],
                 ]);
                 $reply_markup = $keyboard;
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
@@ -106,8 +105,7 @@
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case ('Контакты'):
-                $text_return="Telegram, WhatsApp +79229619507 
-VK ya.stor100";
+                $text_return="Почта для связи: lordus604@gmail.com";
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case ('Примеры работ'):
@@ -167,7 +165,7 @@ VK ya.stor100";
             default:
                 $text_return = "Извините, я вас не понимаю, пожалуйста воспользуйтесь клавиатурой.";
                 $keyboard1 = getKeyBoard([[
-                    ['text'=>"Услуги"],
+                    ['text'=>"Товары и услуги"],
                     ['text'=>'Помощь'],
                     ['text'=>'О нас']
                     ],
@@ -194,6 +192,12 @@ VK ya.stor100";
             message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
         } 
         if (findLastMessage($chat_id)=='contacts'){
+            if(checkOrdReady($chat_id)){
+               $text_return="Что-то пошло не так :(
+    Зайдите в корзину и проверьте что она не пуста, затем нажмите продолжить и переоформите заказ";
+                message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
+                setLastMessage($chat_id,'dm'); 
+            }else{
             setContacts($chat_id,$text);
             setLastMessage($chat_id,'contact');
             $text_return="Приняли в работу, свяжемся с вами как всё будет готово";
@@ -203,10 +207,12 @@ VK ya.stor100";
             sendNotice($chat_id);
             setStatus($chat_id);
             setOrd($chat_id);
+            }
         }
         if (findLastMessage($chat_id)=='comment'){
             setComment($chat_id,$text);
-            $text_return="Хорошо! Пожалуйста, напишите как можно будет с вами связаться?";
+            $text_return="Хорошо! Пожалуйста, напишите как можно будет с вами связаться? Например, можете оставить свою почту, id VK или номер телефона для связи в WhatsApp
+    (Ваш сеанс общения с ботом зашифрован, поэтому мы не сможем дать обратную связь здесь)";
             message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
             setLastMessage($chat_id,'contacts');
         }  
@@ -251,7 +257,7 @@ VK ya.stor100";
         switch($message){
             //Услуги
             case('m_z'): //зубы из мыла
-                $text_return = "Вам нужны только коронки или зубы с корнями:";
+                $text_return = "Вам нужны только коронки или зубы с корнями?";
                 $keyboard = getInlineKeyBoard([
                     [['text' => 'Коронки(150р/шт) ', 'callback_data' => 'nsotdel']],
                     [['text' => 'Зубы с корнями(200р/шт)', 'callback_data' => 'wsotdel']],
@@ -354,7 +360,7 @@ VK ya.stor100";
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case('1p_z'): //Зубы из пластилина
-                $text_return="Какой цвет пластилина выберете ?";
+                $text_return="Какой цвет пластилина выберете?";
                 $keyboard = getInlineKeyBoard([
                     [['text' => 'Белый ', 'callback_data' => 'color1']],
                     [['text' => 'Бежевый (телесный)', 'callback_data' => 'color2']],
@@ -373,7 +379,7 @@ VK ya.stor100";
                         break;
                 }
                 setColor($chat_id, $color);
-                $text_return = "Вам нужны только коронки или зубы с корнями:";
+                $text_return = "Вам нужны только коронки или зубы с корнями?";
                 $keyboard = getInlineKeyBoard([
                     [['text' => 'Коронки(150р/шт) ', 'callback_data' => 'nkor_p']],
                     [['text' => 'Зубы с корнями(200р/шт)', 'callback_data' => 'wkor_p']],
@@ -581,12 +587,12 @@ VK ya.stor100";
             case('alb224'):
             case('alb4'):
                 addProductToPocket($chat_id, $message);
-                $text_return= "Альбом успешно добавлен в корзину";
+                $text_return= 'Альбом успешно добавлен в корзину, чтобы сделать заказ перейдите в корзину и нажмите "Продолжить"';
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case("less"):
                 addProductToPocket($chat_id, $message);
-                $text_return= "Занятие успешно добавлено в корзину";
+                $text_return= 'Занятие успешно добавлено в корзину, чтобы сделать заказ перейдите в корзину и нажмите "Продолжить"';
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case('teeth'):
@@ -642,7 +648,8 @@ VK ya.stor100";
                  message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case('ok'):
-                $text_return="Хорошо! Пожалуйста, напишите как можно будет с вами связаться?";
+                $text_return="Хорошо! Пожалуйста, напишите как можно будет с вами связаться? Например, можете оставить свою почту, id VK или номер телефона для связи в WhatsApp
+    (Ваш сеанс общения с ботом зашифрован, поэтому мы не сможем дать обратную связь здесь)";
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 setLastMessage($chat_id,'contacts');
                 break;

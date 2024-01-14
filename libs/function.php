@@ -61,6 +61,7 @@
         $ord = R::load('ord', findUserActiveOrd($user_id));
 
         $text_return = "&#8252; Поступил новый заказ от ".$user[0]['first_name']." на сумму ".$ord->price.":\n
+    https://web.telegram.org/k/#".$user_id."\n
     Срок: ".$ord->term."
     Цвет зубов: ".$ord->color."
     Контакты: ".$ord->contacts."
