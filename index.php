@@ -71,9 +71,6 @@
                 Примеры работ - фото примеров работ
                 ";
                 message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
-            case ('Отсосёшь'):
-                $text_return="Иди нахуй";
-                message_to_telegram($bot_token, $chat_id, $text_return, $reply_markup);
                 break;
             case('Товары и услуги'):
                 $text_return = "Вот список товаров и услуг:";
